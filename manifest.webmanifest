@@ -1,0 +1,15 @@
+{
+  "name": "GEMFORGE",
+  "short_name": "GEMFORGE",
+  "description": "An offline mineral card roguelike.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06070b",
+  "theme_color": "#06070b",
+  "icons": [
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

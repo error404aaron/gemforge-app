@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#06070b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GEMFORGE" />
+    <meta name="description" content="GEMFORGE: an offline mineral card roguelike." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <title>GEMFORGE</title>
+    <style>html,body{color:#f3eee2;background:#06070b;height:100%;margin:0}.boot{text-align:center;letter-spacing:.3em;color:#d1ad68;place-content:center;justify-items:center;gap:14px;padding:24px;font:700 28px Georgia,serif;display:grid;position:fixed;inset:0}.boot small{letter-spacing:.04em;color:#9b98a8;font:400 14px system-ui,sans-serif}.boot button{color:#f3eee2;background:#1c1508;border:1px solid #d1ad68;border-radius:999px;min-height:48px;padding:0 28px;font:700 15px system-ui,sans-serif}</style>
+    <script type="module" crossorigin src="./assets/index-BpnM5hjX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BCMKEwAY.css">
+  </head>
+  <body>
+    <div id="root"><div class="boot" id="boot">GEMFORGE<small>Heating the forge…</small></div></div>
+    <script>
+      (function () {
+        function fail() {
+          var boot = document.getElementById('boot')
+          if (!boot) return
+          boot.innerHTML = 'GEMFORGE<small>The forge failed to light. Check your connection and try again.</small>' +
+            '<button type="button" onclick="location.reload()">Reload</button>'
+        }
+        window.addEventListener('error', function (e) { if (e.target && e.target.tagName === 'SCRIPT') fail() }, true)
+        setTimeout(fail, 10000)
+      })()
+    </script>
+  </body>
+</html>
