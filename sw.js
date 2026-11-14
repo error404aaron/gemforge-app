@@ -1,4 +1,4 @@
-const CACHE='gemforge-v7-6793117939f3';const FILES=["./","./index.html","./icon.svg","./icon-512.png","./apple-touch-icon.png","./manifest.webmanifest","./assets/index-BpTw26hJ.js","./assets/index-qDL3X7jR.css"];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
+const CACHE='gemforge-v7-cc4ad0bddad3';const FILES=["./","./index.html","./icon.svg","./icon-512.png","./apple-touch-icon.png","./manifest.webmanifest","./assets/index-CuQTWPjc.js","./assets/index-D3WjENKi.css"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.map(f=>new Request(f,{cache:'reload'})))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('gemforge-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(caches.open(CACHE).then(async c=>{const hit=await c.match(e.request,{ignoreVary:true});if(hit)return hit;try{return await fetch(e.request)}catch(error){if(e.request.mode==='navigate')return c.match(new URL('./index.html',self.location.href));throw error}}));});
