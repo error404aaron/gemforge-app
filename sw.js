@@ -1,27 +1,4 @@
-const CACHE = 'gemforge-v2'
-
-self.addEventListener('install', () => self.skipWaiting())
-self.addEventListener('activate', (event) =>
-  event.waitUntil(
-    caches
-      .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
-      .then(() => self.clients.claim()),
-  ),
-)
-
-self.addEventListener('fetch', (event) => {
-  const request = event.request
-  if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return
-  event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (response.ok) {
-          const copy = response.clone()
-          caches.open(CACHE).then((cache) => cache.put(request, copy))
-        }
-        return response
-      })
-      .catch(() => caches.match(request, { ignoreSearch: true }).then((hit) => hit || Response.error())),
-  )
-})
+const CACHE='gemforge-v4-13451a33bd54';const FILES=["./","./index.html","./icon.svg","./icon-512.png","./apple-touch-icon.png","./manifest.webmanifest","./assets/index-2Mtp724P.css","./assets/index-B1ivDcDi.js"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('gemforge-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(caches.open(CACHE).then(async c=>{const hit=await c.match(e.request,{ignoreVary:true});if(hit)return hit;try{return await fetch(e.request)}catch(error){if(e.request.mode==='navigate')return c.match(new URL('./index.html',self.location.href));throw error}}));});
