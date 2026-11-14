@@ -1,0 +1,71 @@
+{
+  "batch": "pwa",
+  "appRepoCommit": "aab863c05a8d62184fd2695e2f8492700696b2bb",
+  "servedBuild": "see test names",
+  "at": "2026-11-14T18:13:08.500Z",
+  "browser": "chromium (playwright 1.63.0)",
+  "passed": 7,
+  "total": 7,
+  "results": [
+    {
+      "name": "P1 0.7.2 fresh install: SW controls page, single cache with all 8 assets",
+      "status": "PASS",
+      "ms": 432,
+      "notes": [
+        "cache gemforge-v7-c445cc95eb4b"
+      ]
+    },
+    {
+      "name": "P2 0.7.2 offline cold start: app boots, plays, resumes save, version correct, daily starts offline",
+      "status": "PASS",
+      "ms": 31581,
+      "notes": [
+        "offline: boot, resume, play, guide, daily ok"
+      ]
+    },
+    {
+      "name": "P3 offline deep navigation (unknown path) falls back to cached index",
+      "status": "PASS",
+      "ms": 524,
+      "notes": [
+        "query-string navigation served offline"
+      ]
+    },
+    {
+      "name": "P4 upgrade 0.6.0 -> 0.7.2 (save v5 migration)",
+      "status": "PASS",
+      "ms": 8610,
+      "notes": [
+        "0.6.0->0.7.2: 1 stale launch (pre-0.7.1 client has no reload hook); new SW took over in 3002ms; 2nd launch = new UI",
+        "version shown \"v0.7.2 · 4ca6deb\""
+      ]
+    },
+    {
+      "name": "P5 upgrade 0.7.0 -> 0.7.2",
+      "status": "PASS",
+      "ms": 8608,
+      "notes": [
+        "0.7.0->0.7.2: 1 stale launch (pre-0.7.1 client has no reload hook); new SW took over in 3013ms; 2nd launch = new UI",
+        "version shown \"v0.7.2 · 4ca6deb\""
+      ]
+    },
+    {
+      "name": "P6 upgrade 0.7.1 -> 0.7.2",
+      "status": "PASS",
+      "ms": 8475,
+      "notes": [
+        "0.7.1->0.7.2: new UI live 2847ms after first post-deploy launch (auto-reload, no user action)",
+        "version shown \"v0.7.2 · 4ca6deb\""
+      ]
+    },
+    {
+      "name": "P7 upgrade 0.7.0 -> 0.7.1",
+      "status": "PASS",
+      "ms": 8586,
+      "notes": [
+        "0.7.0->0.7.1: 1 stale launch (pre-0.7.1 client has no reload hook); new SW took over in 2999ms; 2nd launch = new UI",
+        "version shown \"GEMFORGE 0.7.1\""
+      ]
+    }
+  ]
+}

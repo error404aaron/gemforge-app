@@ -1,0 +1,90 @@
+{
+  "batch": "ui-mobile-desktop",
+  "appRepoCommit": "aab863c05a8d62184fd2695e2f8492700696b2bb",
+  "servedBuild": "see test names",
+  "at": "2026-11-14T18:17:26.700Z",
+  "browser": "chromium (playwright 1.63.0)",
+  "passed": 9,
+  "total": 10,
+  "results": [
+    {
+      "name": "M-layout iPhone 13: full-screen battle, no overflow, controls in viewport, tap targets >=40px",
+      "status": "PASS",
+      "ms": 935,
+      "notes": [
+        "390x664 game 390x664"
+      ]
+    },
+    {
+      "name": "M-layout iPhone SE: full-screen battle, no overflow, controls in viewport, tap targets >=40px",
+      "status": "PASS",
+      "ms": 463,
+      "notes": [
+        "320x568 game 320x568"
+      ]
+    },
+    {
+      "name": "M-layout iPhone 14 Pro Max: full-screen battle, no overflow, controls in viewport, tap targets >=40px",
+      "status": "PASS",
+      "ms": 998,
+      "notes": [
+        "430x740 game 430x740"
+      ]
+    },
+    {
+      "name": "M-layout iPhone 13 landscape: full-screen battle, no overflow, controls in viewport, tap targets >=40px",
+      "status": "FAIL",
+      "ms": 173,
+      "notes": [],
+      "error": "Error: assert eq: battle: controls outside viewport: [[\"card-0\",452,233,534,348],[\"card-1\",548,233,630,348],[\"card-2\",644,233,726,348]] !== []\n    at module.exports.eq (/tmp/claude-0/-home-user-gemforge-app/4bf3cd4b-7b1f-5bac-bd57-74011467f871/scratchpad/harness.js:33:22)\n    at checkFit (/tmp/claude-0/-home-user-gemforge-app/4bf3cd4b-7b1f-5bac-bd57-74011467f871/scratchpad/ui.js:35:3)\n    at /tmp/claude-0/-home-user-gemforge-app/4bf3cd4b-7b1f-5bac-bd57-74011467f871/scratchpad/ui.js:48:7\n    at async run (/tmp/claude-0/-home-user-gemforge-app/4bf3cd4b-7b1f-5bac-bd57-74011467f871/scratchpad/harness.js:14:7)\n    at async /tmp/claude-0/-home-user-gemforge-app/4bf3cd4b-7b1f-5bac-bd57-74011467f871/scratchpad/ui.js:144:3"
+    },
+    {
+      "name": "M-touch iPhone 13: complete run by tap only; reward + end overlays fit; no console errors",
+      "status": "PASS",
+      "ms": 47341,
+      "notes": [
+        "outcome defeat, reward overlay seen: true"
+      ]
+    },
+    {
+      "name": "M-touch iPhone 13: touch drag card onto slot places it",
+      "status": "PASS",
+      "ms": 379,
+      "notes": [
+        "drag placed card, turn advanced"
+      ]
+    },
+    {
+      "name": "M-static: viewport-fit=cover, safe-area env() padding on game + guide, standalone manifest",
+      "status": "PASS",
+      "ms": 199,
+      "notes": [
+        "env() insets are statically present; actual inset values need a notched WebKit device"
+      ]
+    },
+    {
+      "name": "C-desktop 1280x800: full run, overlay, new run, guide, sound pref persists, no console errors",
+      "status": "PASS",
+      "ms": 30750,
+      "notes": [
+        "outcome defeat in 20 actions; sound=off"
+      ]
+    },
+    {
+      "name": "C-desktop: mouse drag card onto slot places it",
+      "status": "PASS",
+      "ms": 458,
+      "notes": [
+        "drag placed card"
+      ]
+    },
+    {
+      "name": "C-desktop: keyboard - Escape closes guide, buttons reachable by Tab",
+      "status": "PASS",
+      "ms": 266,
+      "notes": [
+        "escape closes guide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "batch": "daily-forge",
+  "appRepoCommit": "aab863c05a8d62184fd2695e2f8492700696b2bb",
+  "servedBuild": "see test names",
+  "at": "2026-11-14T18:25:42.057Z",
+  "browser": "chromium (playwright 1.63.0)",
+  "passed": 9,
+  "total": 9,
+  "results": [
+    {
+      "name": "D1 start daily: date, deterministic seed, depth 0, fresh battle, chip shown",
+      "status": "PASS",
+      "ms": 44514,
+      "notes": [
+        "seed 148212264 route imp,hound,moth,wyrm,regent"
+      ]
+    },
+    {
+      "name": "D2 determinism: same date -> identical run in independent context; other date differs",
+      "status": "PASS",
+      "ms": 77805,
+      "notes": [
+        "11-14 seed 148212264, 11-15 seed 164989883"
+      ]
+    },
+    {
+      "name": "D3 local-date handling: same instant gives each timezone its own local date",
+      "status": "PASS",
+      "ms": 81858,
+      "notes": [
+        "Kiritimati 2026-11-15, Pago Pago 2026-11-14"
+      ]
+    },
+    {
+      "name": "D4 save/resume: daily run mid-battle survives reload and resumes identically",
+      "status": "PASS",
+      "ms": 77244,
+      "notes": [
+        "resumed turn 3 enc 0"
+      ]
+    },
+    {
+      "name": "D5 date rollover: yesterday's daily resumes after midnight; next daily uses new date",
+      "status": "PASS",
+      "ms": 63815,
+      "notes": [
+        "rollover ok"
+      ]
+    },
+    {
+      "name": "D6 daily defeat: result recorded, overlay, replay label, normal record untouched",
+      "status": "PASS",
+      "ms": 78555,
+      "notes": [
+        "outcome defeat entry {\"won\":false,\"turns\":14,\"battles\":1}"
+      ]
+    },
+    {
+      "name": "D7 daily victory (fixture: final battle, foe at 1 hp): victory, recorded, normal record untouched",
+      "status": "PASS",
+      "ms": 1627,
+      "notes": [
+        "victory recorded {\"won\":true,\"turns\":1,\"battles\":5}"
+      ]
+    },
+    {
+      "name": "D8 restart during daily retries the same daily; New run returns to a normal run",
+      "status": "PASS",
+      "ms": 69225,
+      "notes": [
+        "ok"
+      ]
+    },
+    {
+      "name": "D9 fail-closed: tampered daily save (wrong seed) is rejected, app starts a clean normal run",
+      "status": "PASS",
+      "ms": 231,
+      "notes": [
+        "rejected"
+      ]
+    }
+  ]
+}
